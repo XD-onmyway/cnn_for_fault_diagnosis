@@ -125,10 +125,10 @@ def main(argv=None):
 
     for data_type in range(10):
         # 二类
-        # if data_type == 0:
-        #     the_type = 0
-        # else:
-        #     the_type = 1
+        if data_type == 0:
+            the_type = 0
+        else:
+            the_type = 1
         # 四类
         # the_type = (data_type + 2) // 3
         # 十类
@@ -143,6 +143,7 @@ def main(argv=None):
                 while True:
                     start = random.randint(0, max_start)
                     if start not in starts:
+                        starts.append(start)
                         break
                 # 将4096个数据点转化成64×64的二维图
                 temp = load_data[start : start + 4096]
@@ -153,6 +154,7 @@ def main(argv=None):
                 while True:
                     start = random.randint(0, max_start)
                     if start not in starts:
+                        starts.append(start)
                         break
                 temp = load_data[start : start + 4096]
                 temp = np.array(temp)
